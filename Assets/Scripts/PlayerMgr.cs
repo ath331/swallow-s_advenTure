@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class PlayerMgr : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject[] playerSkills; //플레이어가 고른 스킬들을 플레이어 자식으로 할당
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
     }
 }

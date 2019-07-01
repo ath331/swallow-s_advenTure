@@ -8,8 +8,8 @@ public class GameMgr : MonoBehaviour
     public GameObject player;
 
     public Transform[] floors;//Stage의 Floor들을 배열로 받기위한 변수
-    public Transform[] skills;//skill들을 저장하기 위한 변수
 
+    private bool playerTurn = true; //플레이어의 턴을 구별하기위한 변수
 
     private void Awake()
     {
@@ -20,13 +20,27 @@ public class GameMgr : MonoBehaviour
     void Start()
     {
         floors = GameObject.Find("Stage").GetComponentsInChildren<Transform>();
-        skills = GameObject.Find("SkillPanel").GetComponentsInChildren<Transform>();
         player.transform.position = floors[5].transform.position; //Player위치를 배열5번칸 (2행1열)로 배치
         Debug.Log("Plater위치 할당");
     }
-    
-    void Update()
+    private void Update()
     {
-        
+        Turn();
+    }
+    IEnumerator Turn() //턴도입 함수. 2초마다 플레이어와 상대의 턴이 돌아오면서 카드를 실행한다
+    {
+        if(playerTurn)
+        {
+            Debug.Log("Player의 턴");
+            playerTurn = false;
+        }
+        else
+        {
+            Debug.Log("상대의 턴");
+            playerTurn = true;
+        }
+
+        yield return new WaitForSeconds(2.0f);
+
     }
 }
