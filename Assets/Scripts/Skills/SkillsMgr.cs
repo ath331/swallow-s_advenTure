@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class SkillsMgr : MonoBehaviour
 {
@@ -10,26 +11,27 @@ public class SkillsMgr : MonoBehaviour
     //스킬이 할당되면 해당 스킬에 맞는 스크립트만 엑티브 트루
 
     public Sprite[] skillsImage;
-
     private string skillName;
-    private int moveEffect;
-    private int offensive;
-    private int defensive;
 
     PlayerMgr playerMgr;
+    GameMgr gameMgr;
 
     private void Start()
     {
-        playerMgr = GetComponent<PlayerMgr>();
+        playerMgr = GameObject.Find("Player").GetComponent<PlayerMgr>();
         int skillNum = Random.Range(0, 3);
         this.GetComponent<Image>().sprite = skillsImage[skillNum];
     }
 
     public void OnMouseDown()
     {
-        Debug.Log("스킬 클릭");
-        int i = 0;
-        this.transform.position = playerMgr.playerSkills[i].transform.position;
-        i++;
+        if (GameMgr.instance.skillCounts < 3)
+        {
+            Debug.Log("스킬 클릭");
+            this.transform.position =
+                playerMgr.playerSkills[GameMgr.instance.skillCounts].transform.position;
+            Debug.Log("플레이어 스킬칸 " + (GameMgr.instance.skillCounts+1) + " 번째칸에 스킬할당");
+            GameMgr.instance.skillCounts++;
+        }
     }
 }

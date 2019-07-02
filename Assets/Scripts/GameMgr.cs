@@ -6,6 +6,8 @@ public class GameMgr : MonoBehaviour
 {
     public static GameMgr instance = null;
     public GameObject player;
+    public GameObject skillPanel;
+    public int skillCounts = 0;
 
     public Transform[] floors;//Stage의 Floor들을 배열로 받기위한 변수
 
@@ -25,6 +27,8 @@ public class GameMgr : MonoBehaviour
     }
     private void Update()
     {
+        if (skillCounts >= 3)
+            skillPanel.SetActive(false);
         Turn();
     }
     IEnumerator Turn() //턴도입 함수. 2초마다 플레이어와 상대의 턴이 돌아오면서 카드를 실행한다

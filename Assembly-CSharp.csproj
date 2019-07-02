@@ -68,7 +68,7 @@
     <Compile Include="Assets\Scripts\Skills\Defensive.cs" />
     <Compile Include="Assets\Scripts\Skills\Move.cs" />
     <Compile Include="Assets\Scripts\Skills\Offensive.cs" />
-    <Compile Include="Assets\Scripts\SkillsMgr.cs" />
+    <Compile Include="Assets\Scripts\Skills\SkillsMgr.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/ATH/Desktop/AnT/study/Unity19/swallow-s_advenTure/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
