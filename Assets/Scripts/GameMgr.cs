@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMgr : MonoBehaviour
 {
     public static GameMgr instance = null;
     public GameObject player;
-    public GameObject skillPanel;
+    public Image skillPanel;
     public int skillCounts = 0;
 
     public Transform[] floors;//Stage의 Floor들을 배열로 받기위한 변수
@@ -27,24 +28,10 @@ public class GameMgr : MonoBehaviour
     }
     private void Update()
     {
-        if (skillCounts >= 3)
-            skillPanel.SetActive(false);
-        Turn();
+        
     }
-    IEnumerator Turn() //턴도입 함수. 2초마다 플레이어와 상대의 턴이 돌아오면서 카드를 실행한다
-    {
-        if(playerTurn)
-        {
-            Debug.Log("Player의 턴");
-            playerTurn = false;
-        }
-        else
-        {
-            Debug.Log("상대의 턴");
-            playerTurn = true;
-        }
-
-        yield return new WaitForSeconds(2.0f);
-
-    }
+    
+    //턴제 활용 함수추가 .activeSlef 활용
+    //스킬을 다고른후 ( Choicepanel이 false일경우 플레이어의 턴 시작)
+    //턴마다 첫번쨰 카드를 실행후 해당 카드 삭제 -> 다시 카드를 고를때 있으면 안되니깐
 }
