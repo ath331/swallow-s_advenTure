@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Defensive : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GameObject player;
+
+    private void Start()
     {
-        
+        player = GameObject.Find("Player").gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayerDefensive()
     {
-        
+        Debug.Log("Defen발동");
+        Destroy(this.gameObject);
     }
 }

@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 878177682819851453}
   - component: {fileID: 561119363417439781}
   - component: {fileID: -3700820365844765732}
-  - component: {fileID: 869596185169279962}
-  - component: {fileID: -5034493309296597970}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Skill
@@ -126,31 +124,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &869596185169279962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4146479775974121179}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b5a72b937e12234cba9916aad351a95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-5034493309296597970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4146479775974121179}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66463a5a2e4b7a14499b6e801924b135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillsImage: []
 --- !u!1 &5181155545177993735
 GameObject:
   m_ObjectHideFlags: 0

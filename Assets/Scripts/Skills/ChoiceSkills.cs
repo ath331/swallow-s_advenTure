@@ -13,16 +13,16 @@ public class ChoiceSkills : MonoBehaviour
     private void Update()
     {
         if (GameMgr.instance.skillCounts >= 3)
+        {
             _this.SetActive(false);
+            GameMgr.instance.gameStart = true;
+            Debug.Log("GameStart");
+            GameMgr.instance.skillCounts = 0;
+        }
     }
 
     private void OnEnable()
     {
-        if (GameMgr.instance.skillCounts >= 3)
-        {
-            GameMgr.instance.skillCounts = 0;
-        }
-
         parent = GameObject.Find("SkillPanel").GetComponent<Transform>();
         for (int i = 0; i < 3; i++)
         {

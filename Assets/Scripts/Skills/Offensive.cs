@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Offensive : SkillsMgr
 {
-    private int attack;
+    GameObject player;
 
     private void Start()
     {
-        attack = 1;
+        player = GameObject.Find("Player").gameObject;
+    }
+
+    public void PlayerOffensive()
+    {
+        Debug.Log("Offen발동");
+        Destroy(this.gameObject);
     }
 }

@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GameObject player;
+
+    private void Start()
     {
-        
+        player = GameObject.Find("Player").gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayerMove()
     {
+        Debug.Log("Move발동");
+        player.transform.position = new Vector2(player.transform.position.x + 4 , 0);
+        Destroy(this.gameObject);
         
     }
 }
