@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMgr : MonoBehaviour
 {
@@ -10,5 +11,31 @@ public class PlayerMgr : MonoBehaviour
     public GameObject[] playersSkill;
     //할당이 끝나면 사용을 위해 해당위치에있는 스킬들을 배열에 넣는다.
     
+    [HideInInspector] public float playerHP;
+    [HideInInspector] public float playerEnergy;
 
+    public Image HpBar;
+    public Image EnergyBar;
+
+    private void Start()
+    {
+        playerHP = 100.0f;
+        playerEnergy = 100.0f;
+    }
+
+    private void Update()
+    {
+        EnergyBar.fillAmount = (float)playerEnergy / (float) 100.0f;
+    }
+
+    public void playerHPMinus( float _num )
+    {
+        playerHP -= _num;
+    }
+
+    public void playerEnergyMinus( float _num)
+    {
+        Debug.Log("Energy -10");
+        playerEnergy -= _num;
+    }
 }
