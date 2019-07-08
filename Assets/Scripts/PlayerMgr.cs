@@ -17,6 +17,9 @@ public class PlayerMgr : MonoBehaviour
     public Image HpBar;
     public Image EnergyBar;
 
+    public GameObject firePos;
+    public GameObject bull;
+
     private void Start()
     {
         playerHP = 100.0f;
@@ -26,6 +29,7 @@ public class PlayerMgr : MonoBehaviour
     private void Update()
     {
         EnergyBar.fillAmount = (float)playerEnergy / (float) 100.0f;
+        HpBar.fillAmount = (float)playerHP / (float)100.0f;
     }
 
     public void playerHPMinus( float _num )

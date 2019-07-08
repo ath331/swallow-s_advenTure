@@ -62,11 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\EnermyMgr.cs" />
+    <Compile Include="Assets\Scripts\Fire.cs" />
     <Compile Include="Assets\Scripts\GameMgr.cs" />
     <Compile Include="Assets\Scripts\MoveScene.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\PlayerMgr.cs" />
-    <Compile Include="Assets\Scripts\SkillHandler.cs" />
     <Compile Include="Assets\Scripts\Skills\ChoiceSkills.cs" />
     <Compile Include="Assets\Scripts\Skills\Defensive.cs" />
     <Compile Include="Assets\Scripts\Skills\Move.cs" />

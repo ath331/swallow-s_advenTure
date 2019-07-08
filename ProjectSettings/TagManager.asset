@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Skill
   - PlayerSkill
+  - Enermy
+  - Fire
   layers:
   - Default
   - TransparentFX

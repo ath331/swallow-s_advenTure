@@ -14,7 +14,7 @@ public class GameMgr : MonoBehaviour
     int playerUse = 0;
     int enermyUse = 0;
 
-    public GameObject GameSet;
+    public GameObject gameSet;
 
     public Transform[] floors;//Stage의 Floor들을 배열로 받기위한 변수
     public bool gameStart = false;
@@ -25,6 +25,7 @@ public class GameMgr : MonoBehaviour
 
     ChoiceSkills choSkills;
     PlayerMgr playerMgr;
+    EnermyMgr enermyMgr;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class GameMgr : MonoBehaviour
         choSkills = GameObject.Find("ChoicePanel").GetComponent<ChoiceSkills>();
         floors = GameObject.Find("Stage").GetComponentsInChildren<Transform>();
         playerMgr = GameObject.Find("Player").GetComponent<PlayerMgr>();
+        enermyMgr = GameObject.Find("Enermy").GetComponent<EnermyMgr>();
 
         player.transform.position = floors[5].transform.position; //Player위치를 배열5번칸 (2행1열)로 배치
         Debug.Log("Plater위치 할당");
@@ -47,10 +49,9 @@ public class GameMgr : MonoBehaviour
     }
     private void Update()
     {
-        if (playerMgr.playerHP <= 0)
-        {
+        if(playerMgr.playerHP <= 0) //EnermyHp관리추가
             CallGameSet();
-        }
+        
         if (gameStart == true)
         {
             Turn();
@@ -122,12 +123,14 @@ public class GameMgr : MonoBehaviour
         else if (!playerTurn)
         {
             Debug.Log("Enermy Use Skill!");
+            enermyMgr.EnermyMove();
+            Debug.Log("Enermy Move");
         }
     }
 
     void CallGameSet()
     {
-        GameSet.SetActive(true);
+        gameSet.SetActive(true);
         AudioListener.volume = 0;
     }
 }

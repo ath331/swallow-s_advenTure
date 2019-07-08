@@ -10,6 +10,7 @@ public class SkillsMgr : MonoBehaviour
 
     public Sprite[] skillsImage;
     private string skillName;
+    public Text moveText;
 
     PlayerMgr playerMgr;
     GameMgr gameMgr;
@@ -35,7 +36,7 @@ public class SkillsMgr : MonoBehaviour
             this.GetComponent<Image>().sprite = skillsImage[skillNum];
             this.gameObject.AddComponent<Offensive>();
         }
-        if (skillNum == 2)
+        else if (skillNum == 2)
         {
             this.GetComponent<Image>().sprite = skillsImage[skillNum];
             this.gameObject.AddComponent<Defensive>();
