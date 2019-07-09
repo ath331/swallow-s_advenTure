@@ -59,7 +59,7 @@ public class Move : MonoBehaviour
             }
             else if (num == 1)//Down
             {
-                if (player.transform.position.y - 2.2f >= -3)
+                if (player.transform.position.y - 2.2f >= -3.0f)
                 {
                     player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 2.2f);
                     playerMgr.playerEnergyMinus(10.0f);
@@ -67,7 +67,7 @@ public class Move : MonoBehaviour
             }
             else if (num == 3)// >
             {
-                if (player.transform.position.x + 4.0f <= 7)
+                if (player.transform.position.x + 4.0f <= 7.0f)
                 {
                     player.transform.position = new Vector2(player.transform.position.x + 4.0f, player.transform.position.y);
                     playerMgr.playerEnergyMinus(10.0f);
@@ -75,7 +75,7 @@ public class Move : MonoBehaviour
             }
             else if (num == 2)// <
             {
-                if (player.transform.position.x - 4.0f >= -10)
+                if (player.transform.position.x - 4.0f >= -10.0f)
                 {
                     player.transform.position = new Vector2(player.transform.position.x - 4.0f, player.transform.position.y);
                     playerMgr.playerEnergyMinus(10.0f);

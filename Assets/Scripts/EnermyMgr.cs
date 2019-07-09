@@ -40,7 +40,7 @@ public class EnermyMgr : MonoBehaviour
         }
         else if (num == 1)//Down
         {
-            if (this.gameObject.transform.position.y - 2.2f >= -3)
+            if (this.gameObject.transform.position.y - 2.2f >= -3.0f)
             {
                 this.gameObject.transform.position 
                     = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 2.2f);
@@ -48,7 +48,7 @@ public class EnermyMgr : MonoBehaviour
         }
         else if (num == 3)// >
         {
-            if (this.gameObject.transform.position.x + 4.0f <= 7)
+            if (this.gameObject.transform.position.x + 4.0f <= 7.0f)
             {
                 this.gameObject.transform.position 
                     = new Vector2(this.gameObject.transform.position.x + 4.0f, this.gameObject.transform.position.y);
@@ -56,7 +56,7 @@ public class EnermyMgr : MonoBehaviour
         }
         else if (num == 2)// <
         {
-            if (this.gameObject.transform.position.x - 4.0f >= -10)
+            if (this.gameObject.transform.position.x - 4.0f >= -10.0f)
             {
                 this.gameObject.transform.position 
                     = new Vector2(this.gameObject.transform.position.x - 4.0f, this.gameObject.transform.position.y);
